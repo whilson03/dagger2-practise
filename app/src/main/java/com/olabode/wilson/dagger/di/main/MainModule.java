@@ -12,12 +12,14 @@ import retrofit2.Retrofit;
  */
 @Module
 public class MainModule {
+    @MainScope
     @Provides
     static MainAPi provideMainAPi(Retrofit retrofit) {
         return retrofit.create(MainAPi.class);
     }
 
 
+    @MainScope
     @Provides
     static PostsRecyclerAdapter providePostsRecyclerAdapter() {
         return new PostsRecyclerAdapter();

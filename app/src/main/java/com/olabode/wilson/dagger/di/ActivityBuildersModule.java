@@ -1,9 +1,11 @@
 package com.olabode.wilson.dagger.di;
 
 import com.olabode.wilson.dagger.di.auth.AuthModule;
+import com.olabode.wilson.dagger.di.auth.AuthScope;
 import com.olabode.wilson.dagger.di.auth.AuthViewModelsModule;
 import com.olabode.wilson.dagger.di.main.MainFragmentBuildersModule;
 import com.olabode.wilson.dagger.di.main.MainModule;
+import com.olabode.wilson.dagger.di.main.MainScope;
 import com.olabode.wilson.dagger.di.main.MainViewModelsModule;
 import com.olabode.wilson.dagger.ui.auth.AuthActivity;
 import com.olabode.wilson.dagger.ui.main.MainActivity;
@@ -18,9 +20,11 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class ActivityBuildersModule {
 
+    @AuthScope
     @ContributesAndroidInjector(modules = {AuthViewModelsModule.class, AuthModule.class})
     abstract AuthActivity contributeAuthActivity();
 
+    @MainScope
     @ContributesAndroidInjector(
             modules = {MainFragmentBuildersModule.class, MainViewModelsModule.class,
                     MainModule.class}

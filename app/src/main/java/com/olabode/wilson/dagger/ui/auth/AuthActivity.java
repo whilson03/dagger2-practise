@@ -30,6 +30,8 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     RequestManager requestManager;
     @Inject
     ViewModelProviderFactory providerFactory;
+
+
     private AuthViewModel viewModel;
     private EditText userId;
     private ProgressBar progressBar;
